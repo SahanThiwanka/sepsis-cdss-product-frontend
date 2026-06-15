@@ -66,6 +66,11 @@ const moreNavItems: NavItem[] = [
   label: "Backup Guide",
   roles: ["admin"],
   },
+  {
+  href: "/monitoring",
+  label: "Monitoring",
+  roles: ["admin", "clinician", "researcher"],
+  },
 ];
 
 export default function Navbar() {

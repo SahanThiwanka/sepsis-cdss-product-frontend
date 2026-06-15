@@ -3,6 +3,7 @@ import {
   AuditLogItem,
   DashboardStats,
   ModelInfo,
+  ModelMonitoring,
   PatientItem,
   PatientReport,
   PatientTimelineResponse,
@@ -189,6 +190,19 @@ export async function getSystemHealth(): Promise<SystemHealth> {
   if (!response.ok) {
     const errorText = await response.text();
     throw new Error(`System health request failed: ${errorText}`);
+  }
+
+  return response.json();
+}
+
+export async function getModelMonitoring(): Promise<ModelMonitoring> {
+  const response = await fetch(`${API_BASE_URL}/api/monitoring/`, {
+    headers: authHeaders(),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Model monitoring request failed: ${errorText}`);
   }
 
   return response.json();

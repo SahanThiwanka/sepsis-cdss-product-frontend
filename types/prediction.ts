@@ -236,3 +236,30 @@ export type SystemHealth = {
     role: string;
   };
 };
+
+export type ModelMonitoring = {
+  total_predictions: number;
+  average_risk_score: number;
+  high_risk_predictions: number;
+  moderate_risk_predictions: number;
+  low_risk_predictions: number;
+  alert_rate: number;
+  active_alerts: number;
+  risk_distribution: {
+    low: number;
+    moderate: number;
+    high: number;
+  };
+  daily_prediction_volume: {
+    date: string;
+    count: number;
+  }[];
+  latest_predictions: {
+    patient_code: string;
+    risk_level: string;
+    calibrated_probability: number;
+    raw_probability: number;
+    created_at: string;
+  }[];
+  message: string;
+};
