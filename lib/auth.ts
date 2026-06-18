@@ -2,7 +2,7 @@ import { LoginResponse, User, UserCreatePayload } from "@/types/auth";
 
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:18080";
 
 const TOKEN_KEY = "sepsis_cdss_access_token";
 const USER_KEY = "sepsis_cdss_user";
